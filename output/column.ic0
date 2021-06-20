@@ -1,0 +1,38 @@
+* "simulator" "HSPICE" 
+* "version" "L-2016.06-SP1 linux64"
+* "format" "HSP"
+* "rundate" "17:22:04 06/20/2021 "
+* "netlist" "testbench/column.sp "
+* "runtitle" "* here we use hfox, which has 1e8 hrs and 1e4 lrs"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ col0 =   0.            
++ vr0 =   1.0000        
++ vr1 =   0.            
++ vr2 =   1.0000        
++ vr3 =   1.0000        
++ vr4 =   0.            
++ vr5 =   0.            
++ vr6 =   1.0000        
++ vr7 =   0.            
++ xcross_c0.xc0.dr = 430.1006m       
++ xcross_c0.xc0.vd =   1.0000        
++ xcross_c0.xc1.dr =-3.062e-27       
++ xcross_c0.xc1.vd =   0.            
++ xcross_c0.xc2.dr = 430.1006m       
++ xcross_c0.xc2.vd =   1.0000        
++ xcross_c0.xc3.dr = 430.1006m       
++ xcross_c0.xc3.vd =   1.0000        
++ xcross_c0.xc4.dr =-3.062e-27       
++ xcross_c0.xc4.vd =   0.            
++ xcross_c0.xc5.dr =-3.062e-27       
++ xcross_c0.xc5.vd =   0.            
++ xcross_c0.xc6.dr = 430.1006m       
++ xcross_c0.xc6.vd =   1.0000        
++ xcross_c0.xc7.dr =-3.062e-27       
++ xcross_c0.xc7.vd =   0.            
+***   END: Saved Operating Point ***                     

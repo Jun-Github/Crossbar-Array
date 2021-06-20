@@ -1,0 +1,2881 @@
+ ****** HSPICE -- L-2016.06-SP1 linux64 (Aug 24 2016) ******                    
+  Copyright (c) 1986 - 2021 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: testbench/cross.sp                                                
+  Command line options: /usr/_synopsys/hspice/hspice/linux64/hspice -i testbench/cross.sp -o output/cross.lis
+ lic:  
+ lic: FLEXlm: v11.2.1 
+ lic: USER:   jun                  HOSTNAME: DTFL-workstation 
+ lic: HOSTID: "3cecef285064"       PID:      125824 
+ lic: Using FLEXlm license file: 
+ lic: 27000@DTFL-workstation 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 12-dec-2030/2019.2019 
+ lic: 1(in_use)/99(total) FLOATING license(s) on SERVER 27000@DTFL-workstation 
+ lic:   
+  **info** Monte Carlo simulation is detected, increase number of measure digits to 7 for Monte Carlo post processing.
+1****** HSPICE -- L-2016.06-SP1 linux64 (Aug 24 2016) ******                    
+ ******  
+ * here we use hfox, which has 1e8 hrs and 1e4 lrs
+
+ ****** circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xcross_array.                   crossbar           1.00 
+        2 xcross_array.xc0.               cross_column       1.00 
+        3 xcross_array.xc1.               cross_column       1.00 
+        4 xcross_array.xc2.               cross_column       1.00 
+        5 xcross_array.xc3.               cross_column       1.00 
+        6 xcross_array.xc4.               cross_column       1.00 
+        7 xcross_array.xc5.               cross_column       1.00 
+        8 xcross_array.xc6.               cross_column       1.00 
+        9 xcross_array.xc7.               cross_column       1.00 
+       10 xcross_array.xc0.xc0.           rram               1.00 
+       11 xcross_array.xc0.xc1.           rram               1.00 
+       12 xcross_array.xc0.xc2.           rram               1.00 
+       13 xcross_array.xc0.xc3.           rram               1.00 
+       14 xcross_array.xc0.xc4.           rram               1.00 
+       15 xcross_array.xc0.xc5.           rram               1.00 
+       16 xcross_array.xc0.xc6.           rram               1.00 
+       17 xcross_array.xc0.xc7.           rram               1.00 
+       18 xcross_array.xc1.xc0.           rram               1.00 
+       19 xcross_array.xc1.xc1.           rram               1.00 
+       20 xcross_array.xc1.xc2.           rram               1.00 
+       21 xcross_array.xc1.xc3.           rram               1.00 
+       22 xcross_array.xc1.xc4.           rram               1.00 
+       23 xcross_array.xc1.xc5.           rram               1.00 
+       24 xcross_array.xc1.xc6.           rram               1.00 
+       25 xcross_array.xc1.xc7.           rram               1.00 
+       26 xcross_array.xc2.xc0.           rram               1.00 
+       27 xcross_array.xc2.xc1.           rram               1.00 
+       28 xcross_array.xc2.xc2.           rram               1.00 
+       29 xcross_array.xc2.xc3.           rram               1.00 
+       30 xcross_array.xc2.xc4.           rram               1.00 
+       31 xcross_array.xc2.xc5.           rram               1.00 
+       32 xcross_array.xc2.xc6.           rram               1.00 
+       33 xcross_array.xc2.xc7.           rram               1.00 
+       34 xcross_array.xc3.xc0.           rram               1.00 
+       35 xcross_array.xc3.xc1.           rram               1.00 
+       36 xcross_array.xc3.xc2.           rram               1.00 
+       37 xcross_array.xc3.xc3.           rram               1.00 
+       38 xcross_array.xc3.xc4.           rram               1.00 
+       39 xcross_array.xc3.xc5.           rram               1.00 
+       40 xcross_array.xc3.xc6.           rram               1.00 
+       41 xcross_array.xc3.xc7.           rram               1.00 
+       42 xcross_array.xc4.xc0.           rram               1.00 
+       43 xcross_array.xc4.xc1.           rram               1.00 
+       44 xcross_array.xc4.xc2.           rram               1.00 
+       45 xcross_array.xc4.xc3.           rram               1.00 
+       46 xcross_array.xc4.xc4.           rram               1.00 
+       47 xcross_array.xc4.xc5.           rram               1.00 
+       48 xcross_array.xc4.xc6.           rram               1.00 
+       49 xcross_array.xc4.xc7.           rram               1.00 
+       50 xcross_array.xc5.xc0.           rram               1.00 
+       51 xcross_array.xc5.xc1.           rram               1.00 
+       52 xcross_array.xc5.xc2.           rram               1.00 
+       53 xcross_array.xc5.xc3.           rram               1.00 
+       54 xcross_array.xc5.xc4.           rram               1.00 
+       55 xcross_array.xc5.xc5.           rram               1.00 
+       56 xcross_array.xc5.xc6.           rram               1.00 
+       57 xcross_array.xc5.xc7.           rram               1.00 
+       58 xcross_array.xc6.xc0.           rram               1.00 
+       59 xcross_array.xc6.xc1.           rram               1.00 
+       60 xcross_array.xc6.xc2.           rram               1.00 
+       61 xcross_array.xc6.xc3.           rram               1.00 
+       62 xcross_array.xc6.xc4.           rram               1.00 
+       63 xcross_array.xc6.xc5.           rram               1.00 
+       64 xcross_array.xc6.xc6.           rram               1.00 
+       65 xcross_array.xc6.xc7.           rram               1.00 
+       66 xcross_array.xc7.xc0.           rram               1.00 
+       67 xcross_array.xc7.xc1.           rram               1.00 
+       68 xcross_array.xc7.xc2.           rram               1.00 
+       69 xcross_array.xc7.xc3.           rram               1.00 
+       70 xcross_array.xc7.xc4.           rram               1.00 
+       71 xcross_array.xc7.xc5.           rram               1.00 
+       72 xcross_array.xc7.xc6.           rram               1.00 
+       73 xcross_array.xc7.xc7.           rram               1.00 
+ ******  
+ * here we use hfox, which has 1e8 hrs and 1e4 lrs
+
+ ****** diode model parameters tnom=  25.000 temp=  25.000 ******
+ ********************************************************
+ *** common model parameters model name:  10:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  11:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  12:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  13:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  14:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  15:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  16:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  17:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  18:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  19:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  20:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  21:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  22:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  23:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  24:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  25:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  26:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  27:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  28:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  29:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  30:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  31:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  32:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  33:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  34:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  35:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  36:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  37:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  38:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  39:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  40:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  41:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  42:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  43:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  44:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  45:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  46:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  47:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  48:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  49:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  50:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  51:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  52:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  53:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  54:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  55:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  56:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  57:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  58:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  59:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  60:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  61:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  62:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  63:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  64:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  65:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  66:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  67:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  68:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  69:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  70:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  71:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  72:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+ ********************************************************
+ *** common model parameters model name:  73:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+  **info** (testbench/cross.sp:39) DC voltage reset to initial transient source value in source 0:v0. new dc=0.1000D+01
+*** info *** index=1 is a nominal sample in Monte Carlo.
+*** info *** The MCG Random Number Generator and .Option Use_Agauss_Format = Yes are set as defaults starting with HSPICE L-2016.06 to address the needs of advanced technology nodes with large samples and/or large circuits, particularly for distributed processing.
+*** Should you want backward compatibility, please use the following options:
+For traditional Gaussian style variations, use .Option Random_Generator = 3LC;
+For Variation Block style variations, use .Option Random_Generator = MOA.
+  
+      
+
+MONTE CARLO DEFINITIONS
+
+
+Option sampling_method was set, variation block and agauss format variation are in effect.
+
+Random number generator is MCG            , and seed =      1, stream =   1
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+  Opening plot unit= 15
+ file=output/cross.pa0
+
+
+   *** monte carlo  index =            1 ***
+
+ ******
+ * here we use hfox, which has 1e8 hrs and 1e4 lrs
+
+ ****** transient analysis tnom=  25.000 temp=  25.000 ******
+x
+
+ time         current     current     current     current    
+             vcol0       vcol1       vcol2       vcol3       
+    0.         43.0297u    43.0297u    86.0332u   129.0367u  
+   10.00000n   86.0267u    43.0232u    43.0232u    43.0232u  
+   20.00000n   19.6767n    43.0232u    86.0267u    86.0267u  
+   30.00000n  215.0503u   129.0433u    43.0363u    86.0398u  
+   40.00000n  129.0302u    86.0267u    19.6767n    86.0267u  
+   50.00000n   86.0332u    86.0332u    43.0297u    86.0332u  
+   60.00000n  172.0533u   129.0498u    86.0463u   129.0498u  
+   70.00000n -3.8588e-22 -5.7882e-22 -7.7176e-22 -5.7882e-22 
+   80.00000n  7.5395e-19    1.1308a     1.5077a     1.1308a  
+y
+x
+
+ time         current     current     current     current    
+             vcol4       vcol5       vcol6       vcol7       
+    0.         43.0297u    86.0332u    86.0332u   129.0367u  
+   10.00000n   86.0267u    19.6767n    43.0232u    86.0267u  
+   20.00000n   43.0232u    43.0232u    43.0232u    86.0267u  
+   30.00000n  172.0468u    86.0398u    86.0398u    86.0398u  
+   40.00000n   86.0267u    86.0267u    86.0267u    86.0267u  
+   50.00000n   86.0332u    86.0332u    43.0297u    86.0332u  
+   60.00000n  172.0533u    43.0428u    86.0463u   129.0498u  
+   70.00000n -3.8588e-22 -9.6470e-22 -7.7176e-22 -5.7882e-22 
+   80.00000n  7.5395e-19    1.8845a     1.5077a     1.1308a  
+y
+
+          ***** job concluded
+
+   *** monte carlo  index =            2 ***
+
+x
+
+ time         current    current    current    current   
+             vcol0      vcol1      vcol2      vcol3      
+    0.         39.8385u   41.2574u   83.2464u  117.9208u 
+   10.00000n   78.0383u   35.6351u   38.0202u   48.3513u 
+   20.00000n   16.9655n   41.2532u   83.2404u   83.7544u 
+   30.00000n  209.3986u  121.7437u   38.0337u   72.5007u 
+   40.00000n  131.9162u   82.6935u   18.0934n   72.4876u 
+   50.00000n   91.5565u   86.1241u   44.1226u   86.6673u 
+   60.00000n  155.0720u  115.9243u   77.1629u  117.9344u 
+   70.00000n    1.0280p   51.3327f  330.5492f    1.4098p 
+   80.00000n    1.0280p   51.3327f  330.5537f    1.4098p 
+y
+x
+
+ time         current    current    current    current   
+             vcol4      vcol5      vcol6      vcol7      
+    0.         50.3303u   74.7028u   66.3772u  125.2644u 
+   10.00000n   89.1674u   18.3705n   33.7107u   75.8786u 
+   20.00000n   50.3236u   31.4817u   26.8243u   86.6930u 
+   30.00000n  171.9897u   85.2898u   73.2687u   75.5761u 
+   40.00000n   84.9082u   85.2783u   73.2560u   75.5641u 
+   50.00000n   82.8334u   73.5326u   26.8288u   86.6999u 
+   60.00000n  176.6287u   43.2508u   73.2752u  114.4628u 
+   70.00000n    6.5942p  520.5912f  524.5244f  532.4630f 
+   80.00000n    6.5942p  520.5993f  524.5245f  532.4630f 
+y
+
+          ***** job concluded
+
+   *** monte carlo  index =            3 ***
+
+x
+
+ time         current    current    current    current   
+             vcol0      vcol1      vcol2      vcol3      
+    0.         43.1934u   40.4881u   78.8861u  114.6872u 
+   10.00000n   97.6711u   36.4626u   47.8984u   33.5824u 
+   20.00000n   20.1991n   40.4817u   78.8786u   72.0387u 
+   30.00000n  216.5432u  132.8578u   47.9127u   88.3808u 
+   40.00000n  143.1531u   91.8378u   19.2529n   88.3662u 
+   50.00000n   75.7191u   96.4062u   39.3773u   79.2943u 
+   60.00000n  176.5546u  117.9518u   87.4288u  114.7013u 
+   70.00000n    4.3881p  311.1437f  165.0221f    1.0205p 
+   80.00000n    4.3881p  311.1437f  165.0221f    1.0205p 
+y
+x
+
+ time         current    current    current    current   
+             vcol4      vcol5      vcol6      vcol7      
+    0.         49.9244u   75.1518u   76.2684u  118.9782u 
+   10.00000n   79.5920u   17.7584n   31.3008u   75.7377u 
+   20.00000n   49.9169u   41.2027u   41.9220u   73.0774u 
+   30.00000n  169.9837u   70.6754u   65.6537u   95.6627u 
+   40.00000n   78.9437u   70.6630u   65.6411u   95.6461u 
+   50.00000n   90.4058u   77.9106u   41.9282u   73.0857u 
+   60.00000n  178.5421u   33.9809u   65.6600u  121.6534u 
+   70.00000n   12.8899p  457.2157f -442.4922f   74.9949p 
+   80.00000n   12.8899p  457.2157f -442.4922f   74.9950p 
+y
+
+          ***** job concluded
+
+   *** monte carlo  index =            4 ***
+
+x
+
+ time         current    current    current    current   
+             vcol0      vcol1      vcol2      vcol3      
+    0.         40.3381u   40.3278u   90.2763u  116.0823u 
+   10.00000n   88.4021u   40.7044u   47.0919u   43.1131u 
+   20.00000n   20.8045n   40.3197u   90.2686u   76.4044u 
+   30.00000n  244.4478u  143.2320u   47.1057u   88.1086u 
+   40.00000n  135.4504u   94.9473u   20.8213n   88.0980u 
+   50.00000n  115.7497u  102.5391u   45.7627u   91.5260u 
+   60.00000n  185.4618u  129.2961u   91.6251u  116.0940u 
+   70.00000n    1.5596p    2.9524p  123.4146f -536.4361f 
+   80.00000n    1.5596p    2.9524p  123.4146f -536.4361f 
+y
+x
+
+ time         current    current    current    current   
+             vcol4      vcol5      vcol6      vcol7      
+    0.         50.3784u   86.4845u   97.6632u  160.4924u 
+   10.00000n   94.4272u   21.7762n   44.3185u   87.9986u 
+   20.00000n   50.3725u   48.1733u   54.7931u  110.5723u 
+   30.00000n  177.2560u   78.1523u   87.1976u   83.7288u 
+   40.00000n   95.4783u   78.1376u   87.1819u   83.7123u 
+   50.00000n   82.8417u   87.9911u   54.8005u  110.5811u 
+   60.00000n  187.7591u   38.3491u   87.2045u  137.9344u 
+   70.00000n -253.1534f    1.7548p    1.0576p    4.0266p 
+   80.00000n -253.1534f    1.7548p    1.0576p    4.0266p 
+y
+
+          ***** job concluded
+
+   *** monte carlo  index =            5 ***
+
+x
+
+ time         current    current    current    current   
+             vcol0      vcol1      vcol2      vcol3      
+    0.         36.8202u   52.6095u   88.7099u  139.2328u 
+   10.00000n   98.4709u   54.5670u   49.1459u   40.2018u 
+   20.00000n   21.9098n   52.6039u   88.7039u   91.3501u 
+   30.00000n  218.8156u  145.4779u   49.1600u   88.9685u 
+   40.00000n  125.5329u   96.7038u   20.3748n   88.9527u 
+   50.00000n   83.5700u   90.9305u   44.5407u   81.2681u 
+   60.00000n  176.2089u  155.9272u   93.3366u  139.2470u 
+   70.00000n   93.8211f  130.1777f   50.3336f  213.2100f 
+   80.00000n   93.8211f  130.1777f   50.3336f  213.2100f 
+y
+x
+
+ time         current    current    current    current   
+             vcol4      vcol5      vcol6      vcol7      
+    0.         36.6167u  103.1048u   87.4267u  157.9623u 
+   10.00000n   86.6589u   23.3981n   34.1697u   93.1171u 
+   20.00000n   36.6086u   46.3190u   37.8504u  104.2482u 
+   30.00000n  186.5839u  101.5666u   83.7522u   99.2796u 
+   40.00000n   93.6237u  101.5519u   83.7385u   99.2663u 
+   50.00000n   99.9379u   91.0754u   37.8564u  104.2540u 
+   60.00000n  175.5315u   56.8258u   83.7601u  146.8468u 
+   70.00000n -236.1679f   12.8666p  -82.0187f   62.3206f 
+   80.00000n -236.1679f   12.8669p  -82.0187f   62.3206f 
+y
+
+          ***** job concluded
+
+   *** monte carlo  index =            6 ***
+
+x
+
+ time         current    current    current    current   
+             vcol0      vcol1      vcol2      vcol3      
+    0.         37.5233u   32.1962u   93.1675u  142.9426u 
+   10.00000n   88.6114u   29.7930u   43.4318u   49.2276u 
+   20.00000n   19.3440n   32.1896u   93.1611u  100.6727u 
+   30.00000n  204.1775u  132.5108u   43.4428u   85.2869u 
+   40.00000n  120.3196u   84.1427u   18.7941n   85.2745u 
+   50.00000n   78.0823u  102.7283u   51.4596u   92.2273u 
+   60.00000n  168.5429u  110.3385u   85.1583u  142.9537u 
+   70.00000n  368.8527f  -43.6878f  145.9935f  529.4587f 
+   80.00000n  368.8535f  -43.6798f  145.9939f  529.4601f 
+y
+x
+
+ time         current    current    current    current   
+             vcol4      vcol5      vcol6      vcol7      
+    0.         50.0768u   96.6618u   70.8619u  110.5790u 
+   10.00000n   76.5951u   19.3680n   56.2765u   82.1530u 
+   20.00000n   50.0716u   51.5853u   32.5496u   76.2191u 
+   30.00000n  154.1740u   78.9662u   94.5956u   80.7082u 
+   40.00000n   67.6706u   78.9522u   94.5836u   80.6957u 
+   50.00000n   77.5905u   85.4541u   32.5565u   76.2286u 
+   60.00000n  168.5975u   45.1111u   94.6007u  116.5240u 
+   70.00000n -103.4266f    3.0552p -125.0066f   -8.9931f 
+   80.00000n -103.4266f    3.0552p -125.0063f   -8.9854f 
+y
+
+          ***** job concluded
+
+   *** monte carlo  index =            7 ***
+
+x
+
+ time         current    current    current    current   
+             vcol0      vcol1      vcol2      vcol3      
+    0.         67.7278u   46.1766u   93.2282u  139.7810u 
+   10.00000n   96.1725u   47.0457u   46.3353u   38.7201u 
+   20.00000n   21.0297n   46.1680u   93.2222u   84.9147u 
+   30.00000n  275.0563u  132.4390u   46.3473u   95.8359u 
+   40.00000n  179.0361u   89.0063u   22.8565n   95.8207u 
+   50.00000n  111.1978u   85.4052u   42.9662u   79.6665u 
+   60.00000n  213.4581u  136.6354u   96.6212u  139.7972u 
+   70.00000n    4.0000p  -66.5461f    1.3473p    9.3671f 
+   80.00000n    4.0000p  -66.5439f    1.3473p    9.3672f 
+y
+x
+
+ time         current    current    current    current   
+             vcol4      vcol5      vcol6      vcol7      
+    0.         32.3997u   99.1536u   83.3792u  144.1367u 
+   10.00000n   87.9935u   22.5808n   52.7664u   94.6448u 
+   20.00000n   32.3917u   58.1380u   44.2444u   96.2543u 
+   30.00000n  179.6405u   96.9393u   91.9109u   94.7858u 
+   40.00000n  101.5882u   96.9228u   91.8962u   94.7726u 
+   50.00000n   91.6590u  114.0394u   44.2517u   96.2607u 
+   60.00000n  158.5797u   41.0532u   91.9167u  142.5418u 
+   70.00000n -373.7440f  274.3193f    1.8303p -138.5057f 
+   80.00000n -373.7438f  274.3196f    1.8303p -138.4967f 
+y
+
+          ***** job concluded
+
+   *** monte carlo  index =            8 ***
+
+x
+
+ time         current    current    current    current   
+             vcol0      vcol1      vcol2      vcol3      
+    0.         30.5342u   39.9259u   82.5630u  122.9727u 
+   10.00000n   72.7464u   48.8279u   37.5496u   47.9091u 
+   20.00000n   20.7754n   39.9199u   82.5544u   80.4375u 
+   30.00000n  191.3505u  131.6807u   37.5637u   85.6959u 
+   40.00000n  117.0639u   88.6430u   20.0113n   85.6828u 
+   50.00000n   88.1124u   82.8661u   39.1555u   91.0474u 
+   60.00000n  139.3032u  131.7744u   80.9740u  122.9868u 
+   70.00000n  374.8315f    1.9497p  402.2648f  868.1553f 
+   80.00000n  374.8315f    1.9497p  402.2657f  868.1566f 
+y
+x
+
+ time         current    current    current    current   
+             vcol4      vcol5      vcol6      vcol7      
+    0.         36.2362u   95.3446u   62.7157u  124.5255u 
+   10.00000n   77.7362u   19.9507n   48.8130u   81.2851u 
+   20.00000n   36.2300u   48.9087u   29.3060u   84.7225u 
+   30.00000n  158.2888u   95.5691u   82.2292u   78.8892u 
+   40.00000n   76.3572u   95.5547u   82.2185u   78.8777u 
+   50.00000n   80.5635u   98.0232u   29.3126u   84.7284u 
+   60.00000n  155.6618u   46.4682u   82.2349u  121.1008u 
+   70.00000n   73.3563f  421.1800f   45.9713f  804.4224f 
+   80.00000n   73.3564f  421.1887f   45.9715f  804.4247f 
+y
+
+          ***** job concluded
+ ******  
+ * here we use hfox, which has 1e8 hrs and 1e4 lrs
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+  
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+ cpu MHz	: 1021.875
+  
+ OS:
+ Linux version 3.10.0-1160.25.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Apr 28 21:49:45 UTC 2021
+
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    40
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =     145 # elements   =     208
+  # resistors   =      64 # capacitors =       0 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =      80
+  # curr_srcs   =       0 # diodes     =      64 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.02           1         148
+  transient          0.49          72        3701         977 rev=       148
+  readin             0.02
+  errchk             0.03
+  setup              0.01
+  output             0.00
+
+
+           peak memory used        236.54 megabytes
+           total cpu time            0.57 seconds
+           total elapsed time        0.45 seconds
+           job started at     18:50:24 06/20/2021
+           job ended   at     18:50:24 06/20/2021
+
+
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.14(s)

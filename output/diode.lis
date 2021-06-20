@@ -1,0 +1,224 @@
+ ****** HSPICE -- L-2016.06-SP1 linux64 (Aug 24 2016) ******                    
+  Copyright (c) 1986 - 2021 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: testbench/diode.sp                                                
+  Command line options: /usr/_synopsys/hspice/hspice/linux64/hspice -i testbench/diode.sp -o output/diode.lis
+ lic:  
+ lic: FLEXlm: v11.2.1 
+ lic: USER:   jun                  HOSTNAME: DTFL-workstation 
+ lic: HOSTID: "3cecef285064"       PID:      128939 
+ lic: Using FLEXlm license file: 
+ lic: 27000@DTFL-workstation 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 12-dec-2030/2019.2019 
+ lic: 1(in_use)/99(total) FLOATING license(s) on SERVER 27000@DTFL-workstation 
+ lic:   
+1****** HSPICE -- L-2016.06-SP1 linux64 (Aug 24 2016) ******                    
+ ******  
+ * here we use hfox, which has 1e8 hrs and 1e4 lrs
+
+ ****** diode model parameters tnom=  25.000 temp=  25.000 ******
+ ********************************************************
+ *** common model parameters model name:   0:diode1  ****
+ ********************************************************
+
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** dc breakdown parameters ***
+       vb=   0.    volts        ibv=   1.00m amps   
+
+   2*** parasitic resistance parameters ***
+       rs=   0.    ohms   
+
+   3*** capacitance parameters ***
+       fc= 500.00m              fcs= 500.00m                m= 500.00m        
+     mjsw= 330.00m               pb= 800.00m volts        php= 800.00m volts  
+       tt=   0.    secs         cjo=   0.    f/area       cjp=   0.    f/pj   
+
+   4*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                 tcv=   0.    v/deg k
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+      xti=   3.00            xtitun=   3.00               keg=   1.00         
+       eg=   1.11  ev          gap1= 702.00u  ev/deg     gap2=   1.11k  deg   
+     ttt1=   0.    /deg        ttt2=   0.    /deg2        tm1=   0.    /deg   
+      tm2=   0.    /deg2        tpb=   0.    v/deg k     tphp=   0.    v/deg k
+     tref=  25.00   deg c 
+
+   5*** noise parameters ***
+       kf=   0.                  af=   1.00         
+
+   ***  level   1  model parameters  ***
+
+    level=   1.00                is=  10.00f amps         jsw=   0.    amps   
+        n=   1.00               nbv=   1.00                ik=   0.    amp    
+     area=   1.00                pj=   0.                 ikr=   0.    amp    
+    expli=   0.    amps      explir=   0.    amps        jtun=   0.    amps   
+   jtunsw=   0.    amps        ntun=  30.00         
+  
+  
+      
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2.0000    
+ ******
+ * here we use hfox, which has 1e8 hrs and 1e4 lrs
+
+ ****** dc transfer curves tnom=  25.000 temp=  25.000 ******
+x
+
+ volt         current   
+             vdc        
+    0.          0.      
+   10.00000m  -14.7584f 
+   20.00000m  -31.7811f 
+   30.00000m  -52.1454f 
+   40.00000m  -77.4416f 
+   50.00000m -110.0163f 
+   60.00000m -153.3330f 
+   70.00000m -212.5031f 
+   80.00000m -295.0705f 
+   90.00000m -412.1685f 
+  100.00000m -580.2281f 
+  110.00000m -823.4992f 
+  120.00000m   -1.1778p 
+  130.00000m   -1.6959p 
+  140.00000m   -2.4557p 
+  150.00000m   -3.5724p 
+  160.00000m   -5.2157p 
+  170.00000m   -7.6361p 
+  180.00000m  -11.2036p 
+  190.00000m  -16.4638p 
+  200.00000m  -24.2224p 
+  210.00000m  -35.6680p 
+  220.00000m  -52.5551p 
+  230.00000m  -77.4731p 
+  240.00000m -114.2433p 
+  250.00000m -168.5057p 
+  260.00000m -248.5835p 
+  270.00000m -366.7610p 
+  280.00000m -541.1675p 
+  290.00000m -798.5592p 
+  300.00000m   -1.1784n 
+  310.00000m   -1.7390n 
+  320.00000m   -2.5664n 
+  330.00000m   -3.7875n 
+  340.00000m   -5.5896n 
+  350.00000m   -8.2492n 
+  360.00000m  -12.1744n 
+  370.00000m  -17.9673n 
+  380.00000m  -26.5167n 
+  390.00000m  -39.1343n 
+  400.00000m  -57.7558n 
+  410.00000m  -85.2383n 
+  420.00000m -125.7980n 
+  430.00000m -185.6578n 
+  440.00000m -274.0014n 
+  450.00000m -404.3826n 
+  460.00000m -596.8045n 
+  470.00000m -880.7889n 
+  480.00000m   -1.2999u 
+  490.00000m   -1.9185u 
+  500.00000m   -2.8313u 
+  510.00000m   -4.1786u 
+  520.00000m   -6.1670u 
+  530.00000m   -9.1014u 
+  540.00000m  -13.4323u 
+  550.00000m  -19.8239u 
+  560.00000m  -29.2570u 
+  570.00000m  -43.1787u 
+  580.00000m  -63.7250u 
+  590.00000m  -94.0480u 
+  600.00000m -138.7999u 
+  610.00000m -204.8468u 
+  620.00000m -302.3214u 
+  630.00000m -446.1786u 
+  640.00000m -658.4890u 
+  650.00000m -971.8257u 
+  660.00000m   -1.4343m 
+  670.00000m   -2.1167m 
+  680.00000m   -3.1240m 
+  690.00000m   -4.6105m 
+  700.00000m   -6.8044m 
+  710.00000m  -10.0422m 
+  720.00000m  -14.8206m 
+  730.00000m  -21.8729m 
+  740.00000m  -32.2810m 
+  750.00000m  -47.6416m 
+  760.00000m  -70.3115m 
+  770.00000m -103.7687m 
+  780.00000m -153.1461m 
+  790.00000m -226.0195m 
+  800.00000m -333.5690m 
+  810.00000m -492.2951m 
+  820.00000m -726.5497m 
+  830.00000m   -1.0723  
+  840.00000m   -1.5825  
+  850.00000m   -2.3355  
+  860.00000m   -3.4469  
+  870.00000m   -5.0870  
+  880.00000m   -7.5077  
+  890.00000m  -11.0801  
+  900.00000m  -16.3525  
+y
+
+          ***** job concluded
+ ******  
+ * here we use hfox, which has 1e8 hrs and 1e4 lrs
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+  
+  
+ ******  Machine Information  ******
+ CPU:
+ model name	: Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+ cpu MHz	: 1002.099
+  
+ OS:
+ Linux version 3.10.0-1160.25.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Apr 28 21:49:45 UTC 2021
+
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :    40
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       2 # elements   =       2
+  # resistors   =       0 # capacitors =       0 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       1
+  # curr_srcs   =       0 # diodes     =       1 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0 # N elements =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           0
+  dc sweep           0.01          91         236
+  readin             0.02
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used        236.50 megabytes
+           total cpu time            0.03 seconds
+           total elapsed time        0.17 seconds
+           job started at     20:48:26 06/20/2021
+           job ended   at     20:48:26 06/20/2021
+
+
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.15(s)

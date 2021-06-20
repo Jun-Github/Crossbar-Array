@@ -1,0 +1,80 @@
+* Here we use HfOx, which has 1e8 HRS and 1e4 LRS
+
+.include 'subckt/rram.sp'
+
+.subckt CROSSBAR
++ VIN0 VIN1 VIN2 VIN3 VIN4 VIN5 VIN6 VIN7
++ IOUT0 IOUT1 IOUT2 IOUT3 IOUT4 IOUT5 IOUT6 IOUT7
++ W0_0=0 W0_1=0 W0_2=0 W0_3=0 W0_4=0 W0_5=0 W0_6=0 W0_7=0
++ W1_0=0 W1_1=0 W1_2=0 W1_3=0 W1_4=0 W1_5=0 W1_6=0 W1_7=0
++ W2_0=0 W2_1=0 W2_2=0 W2_3=0 W2_4=0 W2_5=0 W2_6=0 W2_7=0
++ W3_0=0 W3_1=0 W3_2=0 W3_3=0 W3_4=0 W3_5=0 W3_6=0 W3_7=0
++ W4_0=0 W4_1=0 W4_2=0 W4_3=0 W4_4=0 W4_5=0 W4_6=0 W4_7=0
++ W5_0=0 W5_1=0 W5_2=0 W5_3=0 W5_4=0 W5_5=0 W5_6=0 W5_7=0
++ W6_0=0 W6_1=0 W6_2=0 W6_3=0 W6_4=0 W6_5=0 W6_6=0 W6_7=0
++ W7_0=0 W7_1=0 W7_2=0 W7_3=0 W7_4=0 W7_5=0 W7_6=0 W7_7=0
+
+    XC0
+        + VIN0 VIN1 VIN2 VIN3 VIN4 VIN5 VIN6 VIN7
+        + IOUT0
+        + CROSS_COLUMN
+        + W0=W0_0 W1=W0_1 W2=W0_2 W3=W0_3 W4=W0_4
+        + W5=W0_5 W6=W0_6 W7=W0_7
+
+    XC1
+        + VIN0 VIN1 VIN2 VIN3 VIN4 VIN5 VIN6 VIN7
+        + IOUT1
+        + CROSS_COLUMN
+        + W0=W1_0 W1=W1_1 W2=W1_2 W3=W1_3 W4=W1_4
+        + W5=W1_5 W6=W1_6 W7=W1_7
+
+
+    XC2
+        + VIN0 VIN1 VIN2 VIN3 VIN4 VIN5 VIN6 VIN7
+        + IOUT2
+        + CROSS_COLUMN
+        + W0=W2_0 W1=W2_1 W2=W2_2 W3=W2_3 W4=W2_4
+        + W5=W2_5 W6=W2_6 W7=W2_7
+
+
+    XC3
+        + VIN0 VIN1 VIN2 VIN3 VIN4 VIN5 VIN6 VIN7
+        + IOUT3
+        + CROSS_COLUMN
+        + W0=W3_0 W1=W3_1 W2=W3_2 W3=W3_3 W4=W3_4
+        + W5=W3_5 W6=W3_6 W7=W3_7
+
+
+    XC4
+        + VIN0 VIN1 VIN2 VIN3 VIN4 VIN5 VIN6 VIN7
+        + IOUT4
+        + CROSS_COLUMN
+        + W0=W4_0 W1=W4_1 W2=W4_2 W3=W4_3 W4=W4_4
+        + W5=W4_5 W6=W4_6 W7=W4_7
+
+
+    XC5
+        + VIN0 VIN1 VIN2 VIN3 VIN4 VIN5 VIN6 VIN7
+        + IOUT5
+        + CROSS_COLUMN
+        + W0=W5_0 W1=W5_1 W2=W5_2 W3=W5_3 W4=W5_4
+        + W5=W5_5 W6=W5_6 W7=W5_7
+
+
+    XC6
+        + VIN0 VIN1 VIN2 VIN3 VIN4 VIN5 VIN6 VIN7
+        + IOUT6
+        + CROSS_COLUMN
+        + W0=W6_0 W1=W6_1 W2=W6_2 W3=W6_3 W4=W6_4
+        + W5=W6_5 W6=W6_6 W7=W6_7
+
+
+    XC7
+        + VIN0 VIN1 VIN2 VIN3 VIN4 VIN5 VIN6 VIN7
+        + IOUT7
+        + CROSS_COLUMN
+        + W0=W7_0 W1=W7_1 W2=W7_2 W3=W7_3 W4=W7_4
+        + W5=W7_5 W6=W7_6 W7=W7_7
+
+
+.ends
