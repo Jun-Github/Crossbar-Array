@@ -3,14 +3,14 @@
  lic:
  lic: FLEXlm: v11.2.1
  lic: USER:   jun                  HOSTNAME: DTFL-workstation
- lic: HOSTID: "3cecef285064"       PID:      131726
+ lic: HOSTID: "3cecef285064"       PID:      153185
  lic: Using FLEXlm license file:
  lic: 27000@DTFL-workstation
  lic: Checkout 1 hspice
  lic: License/Maintenance for hspice will expire on 12-dec-2030/2019.2019
  lic: 1(in_use)/99(total) FLOATING license(s) on SERVER 27000@DTFL-workstation
  lic:
- init: begin read circuit files,  cpu clock=  1.50E-01
+ init: begin read circuit files,  cpu clock=  1.60E-01
        option search = /usr/_synopsys/hspice/hspice/parts/ad
        option search = /usr/_synopsys/hspice/hspice/parts/behave
        option search = /usr/_synopsys/hspice/hspice/parts/bjt
@@ -26,15 +26,15 @@
        option search = /usr/_synopsys/hspice/hspice/parts/xilinx
        option runlvl
        option post = ascii
- init: end read circuit files,  cpu clock=  1.50E-01 peak memory=       235 mb
- init: begin check errors,  cpu clock=  1.50E-01
- init: end check errors,  cpu clock=  1.50E-01 peak memory=       235 mb
- init: begin setup matrix, pivot=     0 cpu clock=  1.50E-01
-       establish matrix -- done,  cpu clock=  1.50E-01 peak memory=       235 mb
-       re-order matrix -- done,  cpu clock=  1.50E-01 peak memory=       235 mb
- init: end setup matrix,  cpu clock=  1.60E-01 peak memory=       235 mb
+ init: end read circuit files,  cpu clock=  1.60E-01 peak memory=       235 mb
+ init: begin check errors,  cpu clock=  1.60E-01
+ init: end check errors,  cpu clock=  1.70E-01 peak memory=       235 mb
+ init: begin setup matrix, pivot=     0 cpu clock=  1.70E-01
+       establish matrix -- done,  cpu clock=  1.70E-01 peak memory=       235 mb
+       re-order matrix -- done,  cpu clock=  1.70E-01 peak memory=       235 mb
+ init: end setup matrix,  cpu clock=  1.70E-01 peak memory=       235 mb
  output: output/diode.sw0
- sweep: dc dc0    begin, #sweeps=  91 cpu clock=  1.60E-01
- sweep: dc dc0    end,  cpu clock=  1.60E-01 peak memory=       235 mb
+ sweep: dc dc0    begin, #sweeps=  91 cpu clock=  1.70E-01
+ sweep: dc dc0    end,  cpu clock=  1.70E-01 peak memory=       235 mb
 >info:         ***** hspice job concluded
  lic: Release hspice token(s)
