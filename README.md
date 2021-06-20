@@ -22,4 +22,5 @@ Diode의 IV Curve 입니다. 단일 소자 Diode의 output보다 Diode가 저항
 직렬 연결되어있을 때의 curve가 더 중요합니다. Waveviewer가 semilog 
 scale로 plotting을 지원하지 않아 아쉽습니다.
 
+![Ait text](/data/diode.png)
 ![Ait text](/data/input/column_input.png)
