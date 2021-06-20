@@ -10,7 +10,7 @@
  lic:  
  lic: FLEXlm: v11.2.1 
  lic: USER:   jun                  HOSTNAME: DTFL-workstation 
- lic: HOSTID: "3cecef285064"       PID:      125824 
+ lic: HOSTID: "3cecef285064"       PID:      132168 
  lic: Using FLEXlm license file: 
  lic: 27000@DTFL-workstation 
  lic: Checkout 1 hspice 
@@ -2834,7 +2834,7 @@ y
  ******  Machine Information  ******
  CPU:
  model name	: Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
- cpu MHz	: 1021.875
+ cpu MHz	: 1000.048
   
  OS:
  Linux version 3.10.0-1160.25.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Apr 28 21:49:45 UTC 2021
@@ -2862,19 +2862,19 @@ y
   ******  Runtime Statistics (seconds)  ******
 
   analysis           time    # points   tot. iter  conv.iter
-  op point           0.02           1         148
-  transient          0.49          72        3701         977 rev=       148
+  op point           0.05           1         148
+  transient          0.80          72        3701         977 rev=       148
   readin             0.02
   errchk             0.03
-  setup              0.01
+  setup              0.00
   output             0.00
 
 
            peak memory used        236.54 megabytes
-           total cpu time            0.57 seconds
-           total elapsed time        0.45 seconds
-           job started at     18:50:24 06/20/2021
-           job ended   at     18:50:24 06/20/2021
+           total cpu time            0.91 seconds
+           total elapsed time        0.63 seconds
+           job started at     21:39:45 06/20/2021
+           job ended   at     21:39:45 06/20/2021
 
 
  lic: Release hspice token(s) 

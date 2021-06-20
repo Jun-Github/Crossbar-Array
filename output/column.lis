@@ -10,7 +10,7 @@
  lic:  
  lic: FLEXlm: v11.2.1 
  lic: USER:   jun                  HOSTNAME: DTFL-workstation 
- lic: HOSTID: "3cecef285064"       PID:      123439 
+ lic: HOSTID: "3cecef285064"       PID:      132091 
  lic: Using FLEXlm license file: 
  lic: 27000@DTFL-workstation 
  lic: Checkout 1 hspice 
@@ -352,6 +352,13 @@ For Variation Block style variations, use .Option Random_Generator = MOA.
   **warning** (testbench/column.sp:13) Could not find branch element col0 ;branch output ignored
   
       
+
+MONTE CARLO DEFINITIONS
+
+
+Option sampling_method was set, variation block and agauss format variation are in effect.
+
+Random number generator is MCG            , and seed =      1, stream =   1
  *****************************************************************
  ******  option summary
  ******
@@ -359,8 +366,6 @@ For Variation Block style variations, use .Option Random_Generator = MOA.
   Opening plot unit= 15
  file=output/column.pa0
 
-*** ERROR *** in routine Sanity_Check_Generator
- Invalid m           0
 
    *** monte carlo  index =            1 ***
 
@@ -410,7 +415,7 @@ For Variation Block style variations, use .Option Random_Generator = MOA.
  ******  Machine Information  ******
  CPU:
  model name	: Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
- cpu MHz	: 999.902
+ cpu MHz	: 1000.048
   
  OS:
  Linux version 3.10.0-1160.25.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Apr 28 21:49:45 UTC 2021
@@ -438,20 +443,20 @@ For Variation Block style variations, use .Option Random_Generator = MOA.
   ******  Runtime Statistics (seconds)  ******
 
   analysis           time    # points   tot. iter  conv.iter
-  op point           0.00           1          43
-  transient          0.12          72        3104         936 rev=       144
+  op point           0.00           1          95
+  transient          0.13          72        3222         938 rev=       142
   readin             0.02
   errchk             0.00
-  setup              0.00
+  setup              0.01
   output             0.00
 
 
            peak memory used        236.50 megabytes
            total cpu time            0.16 seconds
-           total elapsed time        0.23 seconds
-           job started at     17:22:04 06/20/2021
-           job ended   at     17:22:04 06/20/2021
+           total elapsed time        0.24 seconds
+           job started at     21:39:33 06/20/2021
+           job ended   at     21:39:33 06/20/2021
 
 
  lic: Release hspice token(s) 
- lic: total license checkout elapse time:        0.14(s)
+ lic: total license checkout elapse time:        0.15(s)

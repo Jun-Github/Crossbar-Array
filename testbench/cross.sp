@@ -5,8 +5,8 @@
 
 .param th_var = AGAUSS(0, 0.2, 3)
 .param glovar = AGAUSS(0, 0.25, 3)
-.param r_global = 'glovar'
-.param r_local = AGAUSS(0, 0.25, 3)
+.param c_global = 'glovar'
+.param c_local = AGAUSS(0, 0.25, 3)
 
 .tran
     + 10n 80n sweep monte=8

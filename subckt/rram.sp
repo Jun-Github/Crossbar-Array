@@ -7,7 +7,7 @@
         + vd DR diode1
     
     R1
-        + DR rd r='state>0 ? 1e4/(1+r_global+r_local) : 1e8/(1+r_global+r_local)'
+        + DR rd r='state>0 ? 1e4/(1+c_global+c_local) : 1e8/(1+c_global+c_local)'
 
     .model diode1 d
 .ends

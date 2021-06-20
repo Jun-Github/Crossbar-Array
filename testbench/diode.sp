@@ -4,8 +4,8 @@
 
 .param th_var = AGAUSS(0, 0.2, 3)
 .param globalvar = AGAUSS(0, 0,25, 3)
-.param r_global = 'globalvar'
-.param r_local = AGAUSS(0, 0.25, 3)
+.param c_global = 'globalvar'
+.param c_local = AGAUSS(0, 0.25, 3)
 
 .option post=ASCII
 .dc VDC

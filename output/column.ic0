@@ -1,7 +1,7 @@
 * "simulator" "HSPICE" 
 * "version" "L-2016.06-SP1 linux64"
 * "format" "HSP"
-* "rundate" "17:22:04 06/20/2021 "
+* "rundate" "21:39:33 06/20/2021 "
 * "netlist" "testbench/column.sp "
 * "runtitle" "* here we use hfox, which has 1e8 hrs and 1e4 lrs"
 * time =    0.            

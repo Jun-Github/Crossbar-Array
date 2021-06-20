@@ -3,14 +3,14 @@
  lic:
  lic: FLEXlm: v11.2.1
  lic: USER:   jun                  HOSTNAME: DTFL-workstation
- lic: HOSTID: "3cecef285064"       PID:      123360
+ lic: HOSTID: "3cecef285064"       PID:      131803
  lic: Using FLEXlm license file:
  lic: 27000@DTFL-workstation
  lic: Checkout 1 hspice
  lic: License/Maintenance for hspice will expire on 12-dec-2030/2019.2019
  lic: 1(in_use)/99(total) FLOATING license(s) on SERVER 27000@DTFL-workstation
  lic:
- init: begin read circuit files,  cpu clock=  1.50E-01
+ init: begin read circuit files,  cpu clock=  1.60E-01
        option search = /usr/_synopsys/hspice/hspice/parts/ad
        option search = /usr/_synopsys/hspice/hspice/parts/behave
        option search = /usr/_synopsys/hspice/hspice/parts/bjt
@@ -28,36 +28,36 @@
        option post = ascii
  init: end read circuit files,  cpu clock=  1.60E-01 peak memory=       235 mb
  init: begin check errors,  cpu clock=  1.60E-01
- init: end check errors,  cpu clock=  1.60E-01 peak memory=       235 mb
- init: begin setup matrix, pivot=     0 cpu clock=  1.60E-01
-       establish matrix -- done,  cpu clock=  1.60E-01 peak memory=       235 mb
-       re-order matrix -- done,  cpu clock=  1.60E-01 peak memory=       235 mb
- init: end setup matrix,  cpu clock=  1.60E-01 peak memory=       235 mb
+ init: end check errors,  cpu clock=  1.70E-01 peak memory=       235 mb
+ init: begin setup matrix, pivot=     0 cpu clock=  1.70E-01
+       establish matrix -- done,  cpu clock=  1.70E-01 peak memory=       235 mb
+       re-order matrix -- done,  cpu clock=  1.70E-01 peak memory=       235 mb
+ init: end setup matrix,  cpu clock=  1.70E-01 peak memory=       235 mb
  sweep: monte_carlo     monte_carlo1     begin, #sweeps =   8
  output: output/rram.sw0
  sweep: dc dc1    begin, #sweeps= 101 cpu clock=  1.70E-01
- sweep: dc dc1    end,  cpu clock=  1.70E-01 peak memory=       235 mb
+ sweep: dc dc1    end,  cpu clock=  1.80E-01 peak memory=       235 mb
  output: output/rram.sw0
  sweep: dc dc2    begin, #sweeps= 101 cpu clock=  1.80E-01
- sweep: dc dc2    end,  cpu clock=  1.80E-01 peak memory=       235 mb
+ sweep: dc dc2    end,  cpu clock=  1.90E-01 peak memory=       235 mb
  output: output/rram.sw0
- sweep: dc dc3    begin, #sweeps= 101 cpu clock=  1.80E-01
- sweep: dc dc3    end,  cpu clock=  1.90E-01 peak memory=       235 mb
+ sweep: dc dc3    begin, #sweeps= 101 cpu clock=  1.90E-01
+ sweep: dc dc3    end,  cpu clock=  2.00E-01 peak memory=       235 mb
  output: output/rram.sw0
- sweep: dc dc4    begin, #sweeps= 101 cpu clock=  1.90E-01
- sweep: dc dc4    end,  cpu clock=  2.00E-01 peak memory=       235 mb
+ sweep: dc dc4    begin, #sweeps= 101 cpu clock=  2.00E-01
+ sweep: dc dc4    end,  cpu clock=  2.10E-01 peak memory=       235 mb
  output: output/rram.sw0
- sweep: dc dc5    begin, #sweeps= 101 cpu clock=  2.00E-01
- sweep: dc dc5    end,  cpu clock=  2.10E-01 peak memory=       235 mb
+ sweep: dc dc5    begin, #sweeps= 101 cpu clock=  2.10E-01
+ sweep: dc dc5    end,  cpu clock=  2.20E-01 peak memory=       235 mb
  output: output/rram.sw0
- sweep: dc dc6    begin, #sweeps= 101 cpu clock=  2.10E-01
- sweep: dc dc6    end,  cpu clock=  2.10E-01 peak memory=       235 mb
+ sweep: dc dc6    begin, #sweeps= 101 cpu clock=  2.20E-01
+ sweep: dc dc6    end,  cpu clock=  2.20E-01 peak memory=       235 mb
  output: output/rram.sw0
- sweep: dc dc7    begin, #sweeps= 101 cpu clock=  2.10E-01
- sweep: dc dc7    end,  cpu clock=  2.20E-01 peak memory=       235 mb
+ sweep: dc dc7    begin, #sweeps= 101 cpu clock=  2.30E-01
+ sweep: dc dc7    end,  cpu clock=  2.30E-01 peak memory=       235 mb
  output: output/rram.sw0
- sweep: dc dc8    begin, #sweeps= 101 cpu clock=  2.20E-01
- sweep: dc dc8    end,  cpu clock=  2.30E-01 peak memory=       235 mb
+ sweep: dc dc8    begin, #sweeps= 101 cpu clock=  2.30E-01
+ sweep: dc dc8    end,  cpu clock=  2.40E-01 peak memory=       235 mb
  sweep: monte_carlo     monte_carlo     1 end
 >info:         ***** hspice job concluded
  lic: Release hspice token(s)

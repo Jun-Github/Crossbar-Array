@@ -1,0 +1,31 @@
+$DATA1 SOURCE='HSPICE' VERSION='L-2016.06-SP1 linux64'
+$OPTION MEASFORM=1
+$ This file format is subject to change 
+$ The seperator is :@:                  
+$index=1 is a nominal sample in Monte Carlo.
+$option ignore_global_variation = no              
+$option ignore_local_variation = no               
+$option ignore_interconnect_variation = no        
+$option ignore_spatial_variation = no   
+$option ignore_variation = no 
+$option sampling_method  = srs                  
+$option normal_limit     =      20.0000       
+$option replicates       =   1      
+$option random_generator = MCG                          
+$option seed             =       1  
+$option stream           =   1      
+$option output_sigma_value =  1     
+$option use_agauss_format = yes     
+$option screening_method = pearson  
+$Global Variable number:        1                               
+$Local Variable number:        3                                
+.TITLE '* here we use hfox, which has 1e8 hrs and 1e4 lrs'
+index c_global:@:globalvar:@:IGNC xrram.v_thvar:@:th_var:@:ILNC xrram.r1:@:c_local:@:ILNC xrram.r1:@:c_local:@:ILNC
+1    0.    0.    0.    0. 
+2   -0.8014   -0.8294   -0.2677    0.2150 
+3    1.6757    0.8946    0.2014    1.0447 
+4   -1.7987    2.7742    0.6560   -1.2719 
+5   -0.4937    0.4482    0.3209    1.4379 
+6   -0.5189   -0.3780    0.5518    0.3415 
+7    0.2900   -0.1841    0.8485   -0.7446 
+8   -1.2438    0.6697    0.6131   -1.1911 

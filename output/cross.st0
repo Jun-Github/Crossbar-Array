@@ -3,7 +3,7 @@
  lic:
  lic: FLEXlm: v11.2.1
  lic: USER:   jun                  HOSTNAME: DTFL-workstation
- lic: HOSTID: "3cecef285064"       PID:      125824
+ lic: HOSTID: "3cecef285064"       PID:      132168
  lic: Using FLEXlm license file:
  lic: 27000@DTFL-workstation
  lic: Checkout 1 hspice
@@ -32,48 +32,48 @@
  init: begin setup matrix, pivot=     0 cpu clock=  2.00E-01
        establish matrix -- done,  cpu clock=  2.00E-01 peak memory=       236 mb
        re-order matrix -- done,  cpu clock=  2.00E-01 peak memory=       236 mb
- init: end setup matrix,  cpu clock=  2.10E-01 peak memory=       236 mb
+ init: end setup matrix,  cpu clock=  2.00E-01 peak memory=       236 mb
  sweep: monte_carlo     monte_carlo1     begin, #sweeps =   8
- dcop: begin dcop,  cpu clock=  2.10E-01
- dcop: end dcop,  cpu clock=  2.20E-01 peak memory=       236 mb  tot_iter=      22
+ dcop: begin dcop,  cpu clock=  2.00E-01
+ dcop: end dcop,  cpu clock=  2.10E-01 peak memory=       236 mb  tot_iter=      22
  output: output/cross.tr0
- sweep: tran tran1    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  2.20E-01
- sweep: tran tran1    end,  cpu clock=  2.90E-01 peak memory=       236 mb
- dcop: begin dcop,  cpu clock=  3.00E-01
- dcop: end dcop,  cpu clock=  3.00E-01 peak memory=       236 mb  tot_iter=      43
+ sweep: tran tran1    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  2.10E-01
+ sweep: tran tran1    end,  cpu clock=  2.80E-01 peak memory=       236 mb
+ dcop: begin dcop,  cpu clock=  2.80E-01
+ dcop: end dcop,  cpu clock=  2.90E-01 peak memory=       236 mb  tot_iter=      43
  output: output/cross.tr0
- sweep: tran tran2    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  3.00E-01
- sweep: tran tran2    end,  cpu clock=  3.60E-01 peak memory=       236 mb
- dcop: begin dcop,  cpu clock=  3.70E-01
- dcop: end dcop,  cpu clock=  3.70E-01 peak memory=       236 mb  tot_iter=      58
+ sweep: tran tran2    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  2.90E-01
+ sweep: tran tran2    end,  cpu clock=  3.70E-01 peak memory=       236 mb
+ dcop: begin dcop,  cpu clock=  3.80E-01
+ dcop: end dcop,  cpu clock=  3.80E-01 peak memory=       236 mb  tot_iter=      58
  output: output/cross.tr0
- sweep: tran tran3    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  3.70E-01
- sweep: tran tran3    end,  cpu clock=  4.30E-01 peak memory=       236 mb
- dcop: begin dcop,  cpu clock=  4.30E-01
- dcop: end dcop,  cpu clock=  4.30E-01 peak memory=       236 mb  tot_iter=      78
+ sweep: tran tran3    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  3.80E-01
+ sweep: tran tran3    end,  cpu clock=  4.90E-01 peak memory=       236 mb
+ dcop: begin dcop,  cpu clock=  5.00E-01
+ dcop: end dcop,  cpu clock=  5.00E-01 peak memory=       236 mb  tot_iter=      78
  output: output/cross.tr0
- sweep: tran tran4    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  4.30E-01
- sweep: tran tran4    end,  cpu clock=  4.90E-01 peak memory=       236 mb
- dcop: begin dcop,  cpu clock=  4.90E-01
- dcop: end dcop,  cpu clock=  4.90E-01 peak memory=       236 mb  tot_iter=      89
- output: output/cross.tr0
- sweep: tran tran5    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  4.90E-01
- sweep: tran tran5    end,  cpu clock=  5.50E-01 peak memory=       236 mb
- dcop: begin dcop,  cpu clock=  5.50E-01
- dcop: end dcop,  cpu clock=  5.50E-01 peak memory=       236 mb  tot_iter=     109
- output: output/cross.tr0
- sweep: tran tran6    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  5.50E-01
- sweep: tran tran6    end,  cpu clock=  6.00E-01 peak memory=       236 mb
+ sweep: tran tran4    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  5.00E-01
+ sweep: tran tran4    end,  cpu clock=  6.00E-01 peak memory=       236 mb
  dcop: begin dcop,  cpu clock=  6.10E-01
- dcop: end dcop,  cpu clock=  6.10E-01 peak memory=       236 mb  tot_iter=     130
+ dcop: end dcop,  cpu clock=  6.10E-01 peak memory=       236 mb  tot_iter=      89
  output: output/cross.tr0
- sweep: tran tran7    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  6.10E-01
- sweep: tran tran7    end,  cpu clock=  6.60E-01 peak memory=       236 mb
- dcop: begin dcop,  cpu clock=  6.70E-01
- dcop: end dcop,  cpu clock=  6.70E-01 peak memory=       236 mb  tot_iter=     148
+ sweep: tran tran5    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  6.10E-01
+ sweep: tran tran5    end,  cpu clock=  7.10E-01 peak memory=       236 mb
+ dcop: begin dcop,  cpu clock=  7.20E-01
+ dcop: end dcop,  cpu clock=  7.20E-01 peak memory=       236 mb  tot_iter=     109
  output: output/cross.tr0
- sweep: tran tran8    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  6.70E-01
- sweep: tran tran8    end,  cpu clock=  7.20E-01 peak memory=       236 mb
+ sweep: tran tran6    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  7.30E-01
+ sweep: tran tran6    end,  cpu clock=  8.30E-01 peak memory=       236 mb
+ dcop: begin dcop,  cpu clock=  8.30E-01
+ dcop: end dcop,  cpu clock=  8.40E-01 peak memory=       236 mb  tot_iter=     130
+ output: output/cross.tr0
+ sweep: tran tran7    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  8.40E-01
+ sweep: tran tran7    end,  cpu clock=  9.40E-01 peak memory=       236 mb
+ dcop: begin dcop,  cpu clock=  9.40E-01
+ dcop: end dcop,  cpu clock=  9.50E-01 peak memory=       236 mb  tot_iter=     148
+ output: output/cross.tr0
+ sweep: tran tran8    begin, stop_t=  8.00E-08 #sweeps=   9 cpu clock=  9.50E-01
+ sweep: tran tran8    end,  cpu clock=  1.05E+00 peak memory=       236 mb
  sweep: monte_carlo     monte_carlo     1 end
 >info:         ***** hspice job concluded
  lic: Release hspice token(s)
