@@ -3,7 +3,7 @@
 .include 'subckt/rram.sp'
 .option post=ASCII
 
-.param th_var=AGAUSS(0, 0.2, 3)
+.param th_var=0 $AGAUSS(0, 0.2, 3)
 .param globalvar = AGAUSS(0, 0.25, 3)
 .param c_global = 'globalvar'
 .param c_local = AGAUSS(0, 0.25, 3)
