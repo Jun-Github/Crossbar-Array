@@ -43,8 +43,6 @@ Diode의 IV Curve 입니다. 0 ~ 0.8 [V] DC Voltage Sweep을 한 IV Curve입니�
 단일 소자 Diode의 output보다 Diode가 저항과 직렬 연결되어있을 때의 curve가 더 중요합니다. Waveviewer가 semilog scale로 plotting을 지원하지 않아 아쉽습니다.
 
 
-
-
 # 1D1R Block
 # No Variation
 
@@ -65,16 +63,41 @@ RRAM과 Vth의 Variation이 모두 존재할 때의 Output입니다. Threshold�
 ![Ait text](/data/r_th_var/rram.png)
 
 
-# No Variation Outputs
+# Column Output
 
-## Column Output
+## No Variation Output
 
 Digital Input을 인가하여 Transition Analysis를 진행한 Output입니다. 아래 Value들은 Python으로 교차검증 되었습니다. Digital Input에 Binary Weight를 인가하였지만 이 두 값의 곱들의 합은 Quantized된 Analog Output이 출력된 것을 볼 수 있습니다.
 
 ![Ait text](/data/no_var/column.png)
 
-## Crossbar Array Output
+
+## RRAM Variation
+
+RRAM의 Variation만 있을 때의 output입니다. Variation이 없을 때에 비해 Output Distribution이 존재하는 것을 확인할 수 있습니다.
+
+![Ait text](/data/r_th/column.png)
+
+## RRAM & Vth Variation
+
+RRAM과 Vth의 Variation이 모두 존재할 때의 Output입니다. 분포가 RRAM variation만 존재할 때보다 더 클 것이지만, 8번의 Monte Carlo 해석을 하였기 때문에 해당 Output에서 확인하기엔 다소 무리가 있습니다. 어떠한 Variation이 존재하더라도 모든 경우에서 Output을 잘 못 읽을 가능성이 존재합니다.
+
+# Crossbar Array
+## No Variation
 
 마찬가지로 Output들이 Analog Voltage가 출력되는 것을 볼 수 있습니다. 위 값들은 역시 Python으로 교차검증 되었습니다.
 
 ![Ait text](/data/no_var/cross.png)
+
+
+
+## RRAM Variation
+RRAM Variation만 있을 때의 Output입니다.
+
+![Ait text](/data/r_var/cross.png)
+
+## RRAM & Vth Variation
+
+RRAM과 Vth의 Variation이 모두 존재할 때의 Output입니다.
+
+![Ait text](/data/r_vth_var/cross.png)
