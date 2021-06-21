@@ -17,7 +17,7 @@ data      : output의 wave data를 그림 파일로 모아놓은 디렉토리 �
             variation만 있을 때의 output / rram variation과 threshold
             variaton이 존재할 때의 output입니다.
 ```
-# Common Inputs
+# Inputs
 ## Column Inputs
 
 1D1R Block을 8개를 묶어 만든 Column의 설계에 문제가 없는지 확인하기 위하여 이 Column에 인가한 Input입니다. No Variation의 경우에 이 Input이 실제 Valid Output을 보여줄 수 있는지 확인할 수 있도록 Python으로 행렬 연산 testbench를 작성하여 교차 검증하였습니다. 해당 코드는 data/testbench/testColumn.py에서 확인하실 수 있습니다.
@@ -34,6 +34,8 @@ Colmnn Subcircuit 8개를 묶어 만든 Crossbar Array의 설계에 문제가 �
 
 Diode의 IV Curve 입니다. 0 ~ 0.8 [V] DC Voltage Sweep을 한 IV Curve입니다.
 단일 소자 Diode의 output보다 Diode가 저항과 직렬 연결되어있을 때의 curve가 더 중요합니다. Waveviewer가 semilog scale로 plotting을 지원하지 않아 아쉽습니다.
+
+![Ait text](/data/diode.png)
 
 # 1D1R Block
 # No Variation
@@ -56,7 +58,6 @@ RRAM과 Vth의 Variation이 모두 존재할 때의 Output입니다. Threshold�
 
 
 # No Variation Outputs
-![Ait text](/data/diode.png)
 
 ## Column Output
 
