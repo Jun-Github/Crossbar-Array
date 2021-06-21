@@ -34,6 +34,7 @@ Colmnn Subcircuit 8개를 묶어 만든 Crossbar Array의 설계에 문제가 �
 
 
 
+# Diode
 # Diode IV Curve
 
 ![Ait text](/data/diode.png)
