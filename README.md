@@ -30,12 +30,16 @@ Colmnn Subcircuit 8개를 묶어 만든 Crossbar Array의 설계에 문제가 �
 
 ![Ait text](/data/input/cross_input.png)
 
+
+
 # Diode IV Curve
 
 Diode의 IV Curve 입니다. 0 ~ 0.8 [V] DC Voltage Sweep을 한 IV Curve입니다.
 단일 소자 Diode의 output보다 Diode가 저항과 직렬 연결되어있을 때의 curve가 더 중요합니다. Waveviewer가 semilog scale로 plotting을 지원하지 않아 아쉽습니다.
 
 ![Ait text](/data/diode.png)
+
+
 
 # 1D1R Block
 # No Variation
