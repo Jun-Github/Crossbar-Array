@@ -18,8 +18,17 @@ data      : output의 wave data를 그림 파일로 모아놓은 디렉토리 �
 ```
 # No Variation Outputs
 ## Diode IV Curve
+
 Diode의 IV Curve 입니다. 0 ~ 0.8 [V] DC Voltage Sweep을 한 IV Curve입니다.
 단일 소자 Diode의 output보다 Diode가 저항과 직렬 연결되어있을 때의 curve가 더 중요합니다. Waveviewer가 semilog scale로 plotting을 지원하지 않아 아쉽습니다.
 
+
 ![Ait text](/data/diode.png)
+
+
+## 1D1R Output
+
+0 ~ 1 [V] Voltage sweep을 한 결과입니다. 아래 IV Curve에서 Voltage와 Current가 linear한 관계를 보이는 구간을 linear fitting하여 이 line과 x축이 만나는 곳을 Threshold로 설정하였습니다.
+
+![Ait text](/data/no_var/rram.png)
 ![Ait text](/data/input/column_input.png)
