@@ -76,11 +76,13 @@ Digital Input을 인가하여 Transition Analysis를 진행한 Output입니다. 
 
 RRAM의 Variation만 있을 때의 output입니다. Variation이 없을 때에 비해 Output Distribution이 존재하는 것을 확인할 수 있습니다.
 
-![Ait text](/data/r_th/column.png)
+![Ait text](/data/r_var/column.png)
 
 ## RRAM & Vth Variation
 
 RRAM과 Vth의 Variation이 모두 존재할 때의 Output입니다. 분포가 RRAM variation만 존재할 때보다 더 클 것이지만, 8번의 Monte Carlo 해석을 하였기 때문에 해당 Output에서 확인하기엔 다소 무리가 있습니다. 어떠한 Variation이 존재하더라도 모든 경우에서 Output을 잘 못 읽을 가능성이 존재합니다.
+
+![Ait text](/data/r_th_var/column.png)
 
 # Crossbar Array
 ## No Variation
@@ -100,4 +102,4 @@ RRAM Variation만 있을 때의 Output입니다.
 
 RRAM과 Vth의 Variation이 모두 존재할 때의 Output입니다.
 
-![Ait text](/data/r_vth_var/cross.png)
+![Ait text](/data/r_th_var/cross.png)
