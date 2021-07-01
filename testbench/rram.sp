@@ -9,7 +9,7 @@
 .param c_local = AGAUSS(0, 0.25, 3)
 
 .dc VDC
-    + start=0 stop=1.0 step=0.01 sweep monte=10001
+    + start=0 stop=1.0 step=0.01 sweep monte=10
 
 .print DC
     + i(VDC)
